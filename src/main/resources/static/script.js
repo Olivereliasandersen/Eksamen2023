@@ -39,5 +39,4 @@ function sendForm(){
 
     console.log(citizen)
 
-    if ()
 }
