@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Citizens</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -30,12 +31,12 @@
     </tr>
     <tr>
         <td>Phone Number</td>
-        <td><input type="number" id="phoneNumber"/></td>
+        <td><input type="number" id="phoneNumber" onchange="validatePhoneNumber()"/></td>
         <td><span id="wrongPhoneNumber" style="color: red"></span></td>
     </tr>
     <tr>
         <td>Email Address</td>
-        <td><input type="text" id="email"/></td>
+        <td><input type="text" id="email" onchange="validateEmail()"/></td>
         <td><span id="wrongEmail" style="color: red"></span></td>
     </tr>
     <tr>
@@ -48,5 +49,6 @@
         <td><input type="text" id="street" required/></td>
     </tr>
 </table>
+<button onclick="sendForm()">Send Form</button>
 </body>
 </html>
