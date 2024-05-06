@@ -40,3 +40,4 @@ function sendForm(){
     console.log(citizen)
 
 }
+$.get("/hello", function (data){console.log(data)})
