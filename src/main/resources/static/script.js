@@ -39,5 +39,6 @@ function sendForm(){
 
     console.log(citizen)
 
+    if (citizen.firstname !="" && validateEmail() && validateEmail())
 }
-$.get("/hello", function (data){console.log(data)})
+
