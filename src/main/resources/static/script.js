@@ -13,7 +13,7 @@ function validatePhoneNumber(){
 }
 function validateEmail(){
     const email = $("#email").val();
-    const regexp = /^[A-Za-z0-9._+/-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2}$/;
+    const regexp = /^[A-Za-z0-9._+/-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,3}$/;
     const ok = regexp.test(email);
 
     if (!ok){
@@ -39,6 +39,15 @@ function sendForm(){
 
     console.log(citizen)
 
-    if (citizen.firstname !="" && validateEmail() && validateEmail())
+    if (citizen.firstname!="" && citizen.surname!="" && citizen.DoB!="" && citizen.SSN!="" && validatePhoneNumber() &&
+        validateEmail() && citizen.city!="" && citizen.street!=""){
+        $.post("/saveCitizen", citizen, function(){
+
+        })
+            .fail(function (jqXHR){
+                const json = $.parseJSON(jqXHR.responseText);
+                $("#wrong").html(json.message)
+            })
+    }
 }
 
